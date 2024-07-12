@@ -12,6 +12,7 @@ const config = {
 		adapter: adapter(),
 		alias: {
 			'@browser-package': '../../packages/browser-package/src/index.ts',
+			$lib: 'src/lib',
 		},
 	},
 };
