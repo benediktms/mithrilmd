@@ -1,9 +1,11 @@
-// https://www.npmjs.com/package/tsconfig-moon
 {
   "extends": "tsconfig-moon/tsconfig.json",
   "compilerOptions": {
     "allowJs": true,
-    "lib": ["esnext", "dom"],
+    "lib": [
+      "esnext",
+      "dom"
+    ],
     "module": "nodenext",
     "moduleResolution": "nodenext",
     "target": "es2022",
@@ -15,6 +17,6 @@
     "noEmit": false,
     "noEmitOnError": true,
     "skipLibCheck": true,
-    "verbatimModuleSyntax": false,
+    "verbatimModuleSyntax": false
   }
 }

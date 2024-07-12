@@ -6,7 +6,7 @@ coverage/
 dist/
 dts/
 esm/
-lib/
+# packages/**/lib/
 mjs/
 umd/
 *.d.ts

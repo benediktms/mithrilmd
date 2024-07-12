@@ -10,6 +10,9 @@ const config = {
 
 	kit: {
 		adapter: adapter(),
+		alias: {
+			'@browser-package': '../../packages/browser-package/src/index.ts',
+		},
 	},
 };
 
