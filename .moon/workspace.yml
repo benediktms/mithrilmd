@@ -6,6 +6,7 @@ versionConstraint: '>=1.16.0'
 
 projects:
   client: 'apps/client'
+  browser-package: 'packages/browser-package'
 
 vcs:
   manager: 'git'

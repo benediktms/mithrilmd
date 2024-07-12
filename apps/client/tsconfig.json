@@ -9,6 +9,16 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
-    "outDir": "../../.moon/cache/types/apps/client"
-  }
+    "outDir": "../../.moon/cache/types/apps/client",
+    "paths": {
+      "@browser-package": [
+        "../../packages/browser-package/src/index.ts"
+      ]
+    }
+  },
+  "references": [
+    {
+      "path": "../../packages/browser-package"
+    }
+  ]
 }

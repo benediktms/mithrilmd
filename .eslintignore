@@ -24,3 +24,5 @@ umd/
 pnpm-lock.yaml
 package-lock.json
 yarn.lock
+
+prettier.config.js
