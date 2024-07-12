@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "type": "module",
   "dependencies": {
-    "@neoconfetti/svelte": "^2.2.1",
     "@sveltejs/adapter-auto": "^3.2.1",
     "@sveltejs/kit": "^2.5.10",
     "svelte": "^4.2.17",
