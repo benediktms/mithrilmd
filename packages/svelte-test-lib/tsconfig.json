@@ -1,6 +1,7 @@
 {
   "extends": "./.svelte-kit/tsconfig.json",
   "compilerOptions": {
+    "noEmit": false,
     "allowJs": true,
     "checkJs": true,
     "esModuleInterop": true,
@@ -9,14 +10,9 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
-    "outDir": "../../.moon/cache/types/apps/client"
-  },
-  "references": [
-    {
-      "path": "../../packages/browser-package"
-    },
-    {
-      "path": "../../packages/svelte-test-lib"
-    }
-  ]
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "composite": true,
+    "outDir": "../../.moon/cache/types/packages/svelte-test-lib"
+  }
 }

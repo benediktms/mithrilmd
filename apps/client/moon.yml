@@ -4,6 +4,9 @@ workspace:
   inheritedTasks:
     exclude: ['test', 'typecheck']
 
+dependsOn:
+  - 'svelte-test-lib'
+
 fileGroups:
   app:
     - 'static/**/*'

@@ -6,11 +6,12 @@ module.exports = {
     project: 'tsconfig.eslint.json',
     tsconfigRootDir: __dirname
   },
+  plugins: ['eslint-plugin-prettier', 'eslint-plugin-svelte'],
   extends: [
     'moon',
-    'moon/node'
+    'moon/node',
     // Uncomment when targeting browsers
-    // 'moon/browser',
+    'moon/browser'
     // Uncomment if using React
     // 'moon/react',
     // Uncomment if using Solid
@@ -25,7 +26,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['apps/**/*'],
+      files: ['apps/client', 'packages/svelte-test-lib', 'packages/browser-package'],
       rules: {
         // App pages require default exports
         'import/no-default-export': 'off'
