@@ -13,6 +13,6 @@
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "composite": true,
-    "outDir": "../../.moon/cache/types/packages/svelte-test-lib"
+    "outDir": "../../.moon/cache/types/packages/svelte-lib"
   }
 }

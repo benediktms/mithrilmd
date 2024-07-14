@@ -1,5 +1,5 @@
-<script>
-  const foo = 'foo';
+<script land="ts">
+  const foo = 'this is foo from the lib';
 </script>
 
-<div>{foo}</div>
+<div class="m-2 text-red-600">{foo}</div>
