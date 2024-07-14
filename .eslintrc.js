@@ -26,7 +26,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['apps/client', 'packages/svelte-test-lib', 'packages/browser-package'],
+      files: ['apps/**/*', 'packages/svelte-test-lib/**/', 'packages/browser-package'],
       rules: {
         // App pages require default exports
         'import/no-default-export': 'off'

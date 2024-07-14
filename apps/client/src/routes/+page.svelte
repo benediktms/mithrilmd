@@ -1,8 +1,6 @@
 <script>
   import Foo from '$lib/Foo.svelte';
   import { ComponentFooBar } from 'svelte-test-lib';
-  import { res } from '../lib/add';
-  // import { ComponentFooBar } from '@ui';
 </script>
 
 <svelte:head>
@@ -12,6 +10,8 @@
 
 <section>
   <h1>home</h1>
+  <p>from app</p>
   <Foo />
+  <p>from lib</p>
   <ComponentFooBar />
 </section>

@@ -1,3 +1,3 @@
-import { add } from '@browser-package';
+// import { add } from '@browser-package';
 
-export const res = add(1, 2);
+export const res = 3;

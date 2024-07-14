@@ -1,4 +1,6 @@
-import adapter from '@sveltejs/adapter-auto';
+import { sveltePreprocess } from 'svelte-preprocess';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import adapter from '@sveltejs/adapter-static';
 // eslint-disable-next-line node/no-unpublished-import
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
@@ -6,16 +8,14 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 const config = {
   // Consult https://kit.svelte.dev/docs/integrations#preprocessors
   // for more information about preprocessors
-  preprocess: vitePreprocess(),
+  preprocess: vitePreprocess({ preprocess: sveltePreprocess({ postcss: true }) }),
 
   kit: {
     adapter: adapter(),
     alias: {
-      '@browser-package': '../../packages/browser-package/src/index.ts',
       $lib: 'src/lib'
     }
   }
 };
 
-// eslint-disable-next-line import/no-default-export
 export default config;

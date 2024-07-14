@@ -1,5 +1,7 @@
 <script>
-  const message = 'Hello from foo';
+  const message = 'Hello from the svelte kit app';
 </script>
 
-<h2>{message}</h2>
+<div class="m-4 border-red-600">
+  <h2 class="text-xl">{message}</h2>
+</div>
