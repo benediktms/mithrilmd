@@ -199,6 +199,15 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      cmdk-sv:
+        specifier: ^0.0.17
+        version: 0.0.17(svelte@4.2.17)
+      lucide-svelte:
+        specifier: ^0.408.0
+        version: 0.408.0(svelte@4.2.17)
+      paneforge:
+        specifier: ^0.0.5
+        version: 0.0.5(svelte@4.2.17)
       tailwind-merge:
         specifier: ^2.3.0
         version: 2.4.0
@@ -1237,6 +1246,11 @@ packages:
   '@mdn/browser-compat-data@5.5.29':
     resolution: {integrity: sha512-NHdG3QOiAsxh8ygBSKMa/WaNJwpNt87uVqW+S2RlnSqgeRdk+L3foNWTX6qd0I3NHSlCFb47rgopeNCJtRDY5A==}
 
+  '@melt-ui/svelte@0.61.2':
+    resolution: {integrity: sha512-BHkD9G31zQBToA4euDRBgTQRvWxT9scufOVCXgDO6HKTvyxFspbWT2bgiSFqAK4BbAGDn9Ao36Q8F9O71KN4OQ==}
+    peerDependencies:
+      svelte: '>=3 <5'
+
   '@melt-ui/svelte@0.76.2':
     resolution: {integrity: sha512-7SbOa11tXUS95T3fReL+dwDs5FyJtCEqrqG3inRziDws346SYLsxOQ6HmX+4BkIsQh1R8U3XNa+EMmdMt38lMA==}
     peerDependencies:
@@ -1847,6 +1861,11 @@ packages:
     peerDependencies:
       svelte: ^4.0.0 || ^5.0.0-next.118
 
+  bits-ui@0.9.9:
+    resolution: {integrity: sha512-LkdkyTtpXdkjBzPZJVJgpcre4fut6DONoprMfadHFo82HNUhph+02CxDjYEcZcThb5z4YjSxMlCYvQPZm+YtfQ==}
+    peerDependencies:
+      svelte: ^4.0.0
+
   brace-expansion@1.1.11:
     resolution: {integrity: sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==}
 
@@ -1947,6 +1966,11 @@ packages:
   clsx@2.1.1:
     resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
     engines: {node: '>=6'}
+
+  cmdk-sv@0.0.17:
+    resolution: {integrity: sha512-28QTrK1tT1TSNoGq9MVnzjeLNNjCgjmsM8c2HJfDpRt9t+GD+9m3wX/WdAPaP9jdoNYU0SSdZVdgsGgpaSQOYQ==}
+    peerDependencies:
+      svelte: ^4.0.0
 
   co@4.6.0:
     resolution: {integrity: sha512-QVb0dM5HvG+uaxitm8wONl7jltx8dqhfU33DcqtOZcLSVIKSDDLDi7+0LbAKiyI8hD9u42m2YxXSkMGWThaecQ==}
@@ -3222,6 +3246,11 @@ packages:
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
 
+  lucide-svelte@0.408.0:
+    resolution: {integrity: sha512-5rJvcnHvE+K/2ebff/tKvG1FmIut01hDUaibMk6pG2Je+82TCPflVvhMvgCjP0fkM0ztj5t/ma1s5WYyketOSA==}
+    peerDependencies:
+      svelte: ^3 || ^4 || ^5.0.0-next.42
+
   magic-string@0.30.10:
     resolution: {integrity: sha512-iIRwTIf0QKV3UAnYK4PU8uiEc4SRh5jX0mwpIwETPpHdhVM4f53RSwS/vXvN1JhGX+Cs7B8qIq3d6AH49O5fAQ==}
 
@@ -3330,6 +3359,11 @@ packages:
   nanoid@3.3.7:
     resolution: {integrity: sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
+    hasBin: true
+
+  nanoid@4.0.2:
+    resolution: {integrity: sha512-7ZtY5KTCNheRGfEFxnedV5zFiORN1+Y1N6zvPTnHQd8ENUvfaDBeuJDZb2bN/oXwXxu3qkTXDzy57W5vAmDTBw==}
+    engines: {node: ^14 || ^16 || >=18}
     hasBin: true
 
   nanoid@5.0.7:
@@ -3472,6 +3506,11 @@ packages:
 
   package-json-from-dist@1.0.0:
     resolution: {integrity: sha512-dATvCeZN/8wQsGywez1mzHtTlP22H8OEfPrVMLNr4/eGa+ijtLn/6M5f0dY8UKNrC2O9UCU6SSoG3qRKnt7STw==}
+
+  paneforge@0.0.5:
+    resolution: {integrity: sha512-98QHobaN/KeQhqqglbvjUmNCTRC4h4iqDxpSV8jCGhRLttgGlRXZNzWNr4Firni5rwasAZjOza0k/JdwppB/AQ==}
+    peerDependencies:
+      svelte: ^4.0.0 || ^5.0.0-next.1
 
   parent-module@1.0.1:
     resolution: {integrity: sha512-GQ2EWRpQV8/o+Aw8YqtfZZPfNRWZYkbidE9k5rpl/hC3vtHHBfGm2Ifi6qWV+coDGkrUKZAxE3Lot5kcsRlh+g==}
@@ -5786,6 +5825,16 @@ snapshots:
 
   '@mdn/browser-compat-data@5.5.29': {}
 
+  '@melt-ui/svelte@0.61.2(svelte@4.2.17)':
+    dependencies:
+      '@floating-ui/core': 1.6.4
+      '@floating-ui/dom': 1.6.7
+      '@internationalized/date': 3.5.4
+      dequal: 2.0.3
+      focus-trap: 7.5.4
+      nanoid: 4.0.2
+      svelte: 4.2.17
+
   '@melt-ui/svelte@0.76.2(svelte@4.2.17)':
     dependencies:
       '@floating-ui/core': 1.6.4
@@ -6518,6 +6567,12 @@ snapshots:
       nanoid: 5.0.7
       svelte: 4.2.17
 
+  bits-ui@0.9.9(svelte@4.2.17):
+    dependencies:
+      '@melt-ui/svelte': 0.61.2(svelte@4.2.17)
+      nanoid: 5.0.7
+      svelte: 4.2.17
+
   brace-expansion@1.1.11:
     dependencies:
       balanced-match: 1.0.2
@@ -6632,6 +6687,12 @@ snapshots:
     optional: true
 
   clsx@2.1.1: {}
+
+  cmdk-sv@0.0.17(svelte@4.2.17):
+    dependencies:
+      bits-ui: 0.9.9(svelte@4.2.17)
+      nanoid: 5.0.7
+      svelte: 4.2.17
 
   co@4.6.0:
     optional: true
@@ -8336,6 +8397,10 @@ snapshots:
     dependencies:
       yallist: 3.1.1
 
+  lucide-svelte@0.408.0(svelte@4.2.17):
+    dependencies:
+      svelte: 4.2.17
+
   magic-string@0.30.10:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.4.15
@@ -8436,6 +8501,8 @@ snapshots:
       thenify-all: 1.6.0
 
   nanoid@3.3.7: {}
+
+  nanoid@4.0.2: {}
 
   nanoid@5.0.7: {}
 
@@ -8584,6 +8651,11 @@ snapshots:
   p-try@2.2.0: {}
 
   package-json-from-dist@1.0.0: {}
+
+  paneforge@0.0.5(svelte@4.2.17):
+    dependencies:
+      nanoid: 5.0.7
+      svelte: 4.2.17
 
   parent-module@1.0.1:
     dependencies:
