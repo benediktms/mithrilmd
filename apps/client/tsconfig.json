@@ -16,7 +16,7 @@
       "path": "../../packages/browser-package"
     },
     {
-      "path": "../../packages/svelte-test-lib"
+      "path": "../../packages/ui"
     }
   ]
 }

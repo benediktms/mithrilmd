@@ -5,7 +5,7 @@ workspace:
     exclude: ['test', 'typecheck']
 
 dependsOn:
-  - 'svelte-test-lib'
+  - 'ui'
 
 fileGroups:
   app:
