@@ -1,7 +1,6 @@
 <script>
-  import { res } from '../lib/add';
-
-  console.log(res);
+  import Foo from '$lib/Foo.svelte';
+  import { Button, ComponentFooBar, Counter } from '$ui';
 </script>
 
 <svelte:head>
@@ -11,4 +10,10 @@
 
 <section>
   <h1>home</h1>
+  <p>from app</p>
+  <Foo />
+  <p>from lib</p>
+  <ComponentFooBar />
+  <Counter />
+  <Button variant="destructive">hello</Button>
 </section>

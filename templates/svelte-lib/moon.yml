@@ -1,0 +1,36 @@
+$schema: 'https://moonrepo.dev/schemas/tasks.json'
+
+type: 'library'
+
+fileGroups:
+  sources:
+    - 'src/lib/**/*'
+    - 'vite.config.*'
+    - 'svelte.config.*'
+tasks:
+  build:
+    command: 'pnpm build'
+    inputs:
+      - '@group(sources)'
+    outputs:
+      - 'dist'
+  # Run the development server
+  dev:
+    command: 'vite dev'
+    local: true
+
+  # Optimize dependencies
+  optimize:
+    command: 'vite optimize'
+    local: true
+
+  # Preview the built application
+  preview:
+    command: 'vite preview'
+    deps:
+      - 'build'
+    local: true
+  lint:
+    args:
+      - '--ext'
+      - '.ts,.svelte'

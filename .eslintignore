@@ -26,3 +26,5 @@ package-lock.json
 yarn.lock
 
 prettier.config.js
+postcss.config.js
+tailwind.config.js

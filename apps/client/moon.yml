@@ -4,6 +4,9 @@ workspace:
   inheritedTasks:
     exclude: ['test', 'typecheck']
 
+dependsOn:
+  - 'ui'
+
 fileGroups:
   app:
     - 'static/**/*'
