@@ -16,3 +16,5 @@ typescript:
   rootConfigFileName: 'tsconfig.json'
   routeOutDirToCache: true
   syncProjectReferences: true
+
+rust: {}

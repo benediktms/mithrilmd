@@ -6,9 +6,6 @@
       "path": "apps/client"
     },
     {
-      "path": "packages/browser-package"
-    },
-    {
       "path": "packages/ui"
     }
   ]

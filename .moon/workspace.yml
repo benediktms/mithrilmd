@@ -7,7 +7,9 @@ versionConstraint: '>=1.16.0'
 projects:
   - 'apps/*'
   - 'packages/*'
+  - 'crates/*'
   - 'shared/*/moon.yml'
+  - '.'
 
 vcs:
   manager: 'git'

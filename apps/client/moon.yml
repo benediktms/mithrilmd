@@ -18,6 +18,10 @@ tasks:
     command: 'vite dev'
     local: true
 
+  tauri:
+    command: 'tauri dev'
+    local: true
+
   build:
     command: 'vite build'
     inputs:

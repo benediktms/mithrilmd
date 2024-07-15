@@ -36,3 +36,7 @@ node_modules/
 .output/
 .svelte-kit/
 .vercel/
+
+# Added by cargo
+
+/target
