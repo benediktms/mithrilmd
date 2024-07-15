@@ -1,6 +1,6 @@
 <script>
   import Foo from '$lib/Foo.svelte';
-  import { Button, ComponentFooBar, Counter } from 'ui';
+  import { Button, ComponentFooBar, Counter } from '$ui';
 </script>
 
 <svelte:head>
