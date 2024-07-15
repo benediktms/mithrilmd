@@ -15,6 +15,6 @@
     "composite": true,
     "declaration": true,
     "declarationMap": true,
-    "outDir": "../../.moon/cache/types/packages/ui"
+    "outDir": "../../.moon/cache/types/packages/shadcn-svelte-ui-primitives"
   }
 }

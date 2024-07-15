@@ -7,6 +7,7 @@ fileGroups:
     - 'src/lib/**/*'
     - 'vite.config.*'
     - 'svelte.config.*'
+    - 'tailwind.config.*'
 tasks:
   build:
     command: 'pnpm build'

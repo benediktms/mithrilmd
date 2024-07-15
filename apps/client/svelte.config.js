@@ -12,7 +12,7 @@ const config = {
     adapter: adapter(),
     alias: {
       $lib: 'src/lib',
-      $ui: '../../packages/ui/src/lib'
+      '$shadcn-svelte-ui-primitives': '../../packages/shadcn-svelte-ui-primitives/src/lib'
     }
   }
 };

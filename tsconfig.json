@@ -6,7 +6,7 @@
       "path": "apps/client"
     },
     {
-      "path": "packages/ui"
+      "path": "packages/shadcn-svelte-ui-primitives"
     }
   ]
 }
