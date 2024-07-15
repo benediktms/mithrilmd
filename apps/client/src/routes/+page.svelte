@@ -1,6 +1,7 @@
 <script>
   import Foo from '$lib/Foo.svelte';
-  import { Button, ComponentFooBar, Counter } from '$shadcn-svelte-ui-primitives';
+  import { Button, ComponentFooBar } from '$primitives';
+  import { Counter } from '$mithrilmd-ui';
 </script>
 
 <svelte:head>

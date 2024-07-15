@@ -6,6 +6,9 @@
       "path": "apps/client"
     },
     {
+      "path": "packages/mithrilmd-ui"
+    },
+    {
       "path": "packages/shadcn-svelte-ui-primitives"
     }
   ]

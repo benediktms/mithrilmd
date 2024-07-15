@@ -6,6 +6,7 @@ workspace:
 
 dependsOn:
   - 'shadcn-svelte-ui-primitives'
+  - 'mithrilmd-ui'
 
 fileGroups:
   app:

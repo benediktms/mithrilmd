@@ -13,6 +13,13 @@
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "composite": true,
-    "outDir": "../../.moon/cache/types/packages/shadcn-svelte-ui-primitives"
-  }
+    "declaration": true,
+    "declarationMap": true,
+    "outDir": "../../.moon/cache/types/packages/mithrilmd-ui"
+  },
+  "references": [
+    {
+      "path": "../shadcn-svelte-ui-primitives"
+    }
+  ]
 }
