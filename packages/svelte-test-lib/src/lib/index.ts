@@ -1,3 +1,4 @@
 export { default as ComponentFooBar } from './components/ComponentFooBar.svelte';
 export { default as Counter } from './components/Counter.svelte';
-export { Button } from './components/ui/button/index.js';
+export { Button, Root, buttonVariants } from './components/ui/button/index.js';
+export type { ButtonEvents, ButtonProps, Events, Props } from './components/ui/button/index.js';

@@ -15,5 +15,5 @@
   <p>from lib</p>
   <ComponentFooBar />
   <Counter />
-  <Button>hello</Button>
+  <Button variant="destructive">hello</Button>
 </section>

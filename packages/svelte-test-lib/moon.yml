@@ -12,6 +12,7 @@ tasks:
     command: 'pnpm build'
     inputs:
       - '@group(sources)'
+      - 'tsconfig.json'
     outputs:
       - 'dist'
   # Run the development server
