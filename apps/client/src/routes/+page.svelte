@@ -1,6 +1,6 @@
 <script>
   import Foo from '$lib/Foo.svelte';
-  import { Button, ComponentFooBar } from '$primitives';
+  import { Button } from '$primitives';
   import { Counter } from '$mithrilmd-ui';
 </script>
 
@@ -14,7 +14,6 @@
   <p>from app</p>
   <Foo />
   <p>from lib</p>
-  <ComponentFooBar />
   <Counter />
   <Button variant="destructive">hello</Button>
 </section>

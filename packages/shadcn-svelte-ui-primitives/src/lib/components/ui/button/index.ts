@@ -1,4 +1,4 @@
-import { type VariantProps, tv } from 'tailwind-variants';
+import { tv } from 'tailwind-variants';
 import { Button as ButtonPrimitive } from 'bits-ui';
 import Root from './button.svelte';
 
