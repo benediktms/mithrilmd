@@ -13,9 +13,6 @@
   },
   "references": [
     {
-      "path": "../../packages/browser-package"
-    },
-    {
       "path": "../../packages/ui"
     }
   ]
