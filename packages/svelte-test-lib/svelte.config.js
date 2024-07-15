@@ -1,5 +1,4 @@
 import { sveltePreprocess } from 'svelte-preprocess';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
@@ -17,5 +16,4 @@ const config = {
   }
 };
 
-// eslint-disable-next-line import/no-default-export
 export default config;

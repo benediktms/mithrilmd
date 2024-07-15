@@ -1,6 +1,6 @@
 <script>
   import Foo from '$lib/Foo.svelte';
-  import { ComponentFooBar } from 'svelte-test-lib';
+  import { ComponentFooBar, Counter } from 'svelte-test-lib';
 </script>
 
 <svelte:head>
@@ -14,4 +14,5 @@
   <Foo />
   <p>from lib</p>
   <ComponentFooBar />
+  <Counter />
 </section>

@@ -15,7 +15,7 @@ module.exports = {
   overrides: [
     { files: ['*.svelte'], processor: 'svelte3/svelte3' },
     {
-      files: ['*.test.ts'],
+      files: ['*.test.ts', '*.config.{js,ts}'],
       rules: {
         // Doesn't like vitest
         'import/no-extraneous-dependencies': 'off',

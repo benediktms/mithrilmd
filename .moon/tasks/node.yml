@@ -87,16 +87,27 @@ tasks:
   #     - '@globs(tests)'
 
   # https://moonrepo.dev/docs/guides/examples/jest
+  # test:
+  #   command:
+  #     - 'jest'
+  #     - '--passWithNoTests'
+  #     - '--preset'
+  #     - 'jest-preset-moon'
+  #   inputs:
+  #     - '@globs(sources)'
+  #     - '@globs(tests)'
+  #     - 'jest.config.*'
   test:
     command:
-      - 'jest'
+      - 'vitest'
+      - 'run'
+      - '--coverage'
       - '--passWithNoTests'
-      - '--preset'
-      - 'jest-preset-moon'
     inputs:
-      - '@globs(sources)'
-      - '@globs(tests)'
-      - 'jest.config.*'
+      - '@group(sources)'
+      - '@group(tests)'
+      - 'tests/**/*'
+      - 'vitest.config.*'
 
   # https://moonrepo.dev/docs/guides/examples/typescript
   typecheck:
