@@ -1,7 +1,5 @@
 import Root from './separator.svelte';
 
-export {
-  Root,
-  //
-  Root as Separator
-};
+const Seperator = { Root };
+
+export default Seperator;

@@ -37,12 +37,13 @@ type Props = ButtonPrimitive.Props & {
 
 type Events = ButtonPrimitive.Events;
 
+const Button = Root;
+export default Button;
+
 export {
-  Root,
   type Props,
   type Events,
   //
-  Root as Button,
   type Props as ButtonProps,
   type Events as ButtonEvents,
   buttonVariants

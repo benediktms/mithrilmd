@@ -1,69 +1,38 @@
-export { Button, buttonVariants } from './components/ui/button/index.js';
+import Button from './components/ui/button/index.js';
 export type { ButtonEvents, ButtonProps, Events, Props } from './components/ui/button/index.js';
+export { Button };
 
 export { Badge, badgeVariants } from './components/ui/badge/index.js';
 export type { Variant } from './components/ui/badge/index.js';
 
-export {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle
-} from './components/ui/card/index.js';
+import Card from './components/ui/card/index.js';
+export { Card };
 export type { HeadingLevel } from './components/ui/card/index.js';
 
-export {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger
-} from './components/ui/collapsible/index.js';
+import Collapsible from './components/ui/collapsible/index.js';
+export { Collapsible };
 
-export {
-  Command,
-  CommandDialog,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-  CommandLoading,
-  CommandSeparator,
-  CommandShortcut
-} from './components/ui/command/index.js';
+import Command from './components/ui/command/index.js';
+export { Command };
 
-export {
-  Dialog,
-  DialogClose,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogOverlay,
-  DialogPortal,
-  DialogTitle,
-  DialogTrigger
-} from './components/ui/dialog/index.js';
+import Dialog from './components/ui/dialog/index.js';
+export { Dialog };
 
-export { Input } from './components/ui/input/index.js';
+import Input from './components/ui/input/index.js';
+export { Input };
 export type { FormInputEvent, InputEvents } from './components/ui/input/index.js';
 
-export { Label } from './components/ui/label/index.js';
+import Label from './components/ui/label/index.js';
+export { Label };
 
-export {
-  Popover,
-  PopoverClose,
-  PopoverContent,
-  PopoverTrigger
-} from './components/ui/popover/index.js';
+import Popover from './components/ui/popover/index.js';
+export { Popover };
 
-export {
-  ResizableHandle,
-  ResizablePane,
-  ResizablePaneGroup
-} from './components/ui/resizable/index.js';
+import Resizable from './components/ui/resizable/index.js';
+export { Resizable };
 
-export { ScrollArea, ScrollAreaScrollbar } from './components/ui/scroll-area/index.js';
+import ScrollArea from './components/ui/scroll-area/index.js';
+export { ScrollArea };
 
-export { Separator } from './components/ui/separator/index.js';
+import Separator from './components/ui/separator/index.js';
+export { Separator };

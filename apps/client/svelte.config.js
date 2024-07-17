@@ -11,9 +11,7 @@ const config = {
   kit: {
     adapter: adapter(),
     alias: {
-      $lib: 'src/lib',
-      $primitives: '../../packages/shadcn-svelte-ui-primitives/src/lib',
-      '$mithrilmd-ui': '../../packages/mithrilmd-ui/src/lib'
+      $lib: 'src/lib'
     }
   }
 };

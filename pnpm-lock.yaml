@@ -14,9 +14,6 @@ importers:
       '@fontsource/fira-mono':
         specifier: ^5.0.13
         version: 5.0.13
-      '@tauri-apps/cli':
-        specifier: ^1.6.0
-        version: 1.6.0
       '@types/node':
         specifier: ^20.12.12
         version: 20.12.12
@@ -44,6 +41,9 @@ importers:
       eslint-plugin-svelte3:
         specifier: ^4.0.0
         version: 4.0.0(eslint@8.57.0)(svelte@4.2.17)
+      lucide-svelte:
+        specifier: ^0.408.0
+        version: 0.408.0(svelte@4.2.17)
       postcss:
         specifier: ^8.4.39
         version: 8.4.39
@@ -95,12 +95,12 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
-      mithrilmd-ui:
-        specifier: workspace:*
-        version: link:../../packages/mithrilmd-ui
       shadcn-svelte-ui-primitives:
-        specifier: workspace:shadcn-svelte-ui-primitives
+        specifier: workspace:*
         version: link:../../packages/shadcn-svelte-ui-primitives
+      svelte-dnd-action:
+        specifier: ^0.9.49
+        version: 0.9.49(svelte@4.2.17)
       tailwind-merge:
         specifier: ^2.3.0
         version: 2.4.0
@@ -123,6 +123,9 @@ importers:
       '@sveltejs/vite-plugin-svelte':
         specifier: ^3.1.0
         version: 3.1.0(svelte@4.2.17)(vite@5.2.11(@types/node@20.12.12)(less@4.2.0)(sass@1.77.2)(terser@5.31.0))
+      '@tauri-apps/cli':
+        specifier: ^1.6.0
+        version: 1.6.0
       '@types/cookie':
         specifier: ^0.6.0
         version: 0.6.0
@@ -136,61 +139,6 @@ importers:
         specifier: ^6.0.2
         version: 6.0.2(@babel/core@7.24.6)(less@4.2.0)(postcss-load-config@5.1.0(jiti@1.21.6)(postcss@8.4.39))(postcss@8.4.39)(sass@1.77.2)(svelte@4.2.17)(typescript@5.4.5)
 
-  packages/mithrilmd-ui:
-    dependencies:
-      bits-ui:
-        specifier: ^0.21.12
-        version: 0.21.12(svelte@4.2.17)
-      clsx:
-        specifier: ^2.1.1
-        version: 2.1.1
-      shadcn-svelte-ui-primitives:
-        specifier: workspace:*
-        version: link:../shadcn-svelte-ui-primitives
-      tailwind-merge:
-        specifier: ^2.3.0
-        version: 2.4.0
-      tailwind-variants:
-        specifier: ^0.2.1
-        version: 0.2.1(tailwindcss@3.4.4(ts-node@10.9.2(@types/node@20.12.12)(typescript@5.4.5)))
-    devDependencies:
-      '@sveltejs/adapter-auto':
-        specifier: ^3.0.0
-        version: 3.2.1(@sveltejs/kit@2.5.10(@sveltejs/vite-plugin-svelte@3.1.0(svelte@4.2.17)(vite@5.2.11(@types/node@20.12.12)(less@4.2.0)(sass@1.77.2)(terser@5.31.0)))(svelte@4.2.17)(vite@5.2.11(@types/node@20.12.12)(less@4.2.0)(sass@1.77.2)(terser@5.31.0)))
-      '@sveltejs/adapter-static':
-        specifier: ^3.0.2
-        version: 3.0.2(@sveltejs/kit@2.5.10(@sveltejs/vite-plugin-svelte@3.1.0(svelte@4.2.17)(vite@5.2.11(@types/node@20.12.12)(less@4.2.0)(sass@1.77.2)(terser@5.31.0)))(svelte@4.2.17)(vite@5.2.11(@types/node@20.12.12)(less@4.2.0)(sass@1.77.2)(terser@5.31.0)))
-      '@sveltejs/kit':
-        specifier: ^2.0.0
-        version: 2.5.10(@sveltejs/vite-plugin-svelte@3.1.0(svelte@4.2.17)(vite@5.2.11(@types/node@20.12.12)(less@4.2.0)(sass@1.77.2)(terser@5.31.0)))(svelte@4.2.17)(vite@5.2.11(@types/node@20.12.12)(less@4.2.0)(sass@1.77.2)(terser@5.31.0))
-      '@sveltejs/package':
-        specifier: ^2.0.0
-        version: 2.3.2(svelte@4.2.17)(typescript@5.4.5)
-      '@sveltejs/vite-plugin-svelte':
-        specifier: ^3.0.0
-        version: 3.1.0(svelte@4.2.17)(vite@5.2.11(@types/node@20.12.12)(less@4.2.0)(sass@1.77.2)(terser@5.31.0))
-      autoprefixer:
-        specifier: ^10.4.19
-        version: 10.4.19(postcss@8.4.39)
-      postcss:
-        specifier: ^8.4.38
-        version: 8.4.39
-      publint:
-        specifier: ^0.1.9
-        version: 0.1.16
-      svelte:
-        specifier: ^4.2.7
-        version: 4.2.17
-      svelte-check:
-        specifier: ^3.6.0
-        version: 3.7.1(@babel/core@7.24.6)(less@4.2.0)(postcss-load-config@5.1.0(jiti@1.21.6)(postcss@8.4.39))(postcss@8.4.39)(sass@1.77.2)(svelte@4.2.17)
-      svelte-preprocess:
-        specifier: ^6.0.2
-        version: 6.0.2(@babel/core@7.24.6)(less@4.2.0)(postcss-load-config@5.1.0(jiti@1.21.6)(postcss@8.4.39))(postcss@8.4.39)(sass@1.77.2)(svelte@4.2.17)(typescript@5.4.5)
-      tailwindcss:
-        specifier: ^3.4.4
-        version: 3.4.4(ts-node@10.9.2(@types/node@20.12.12)(typescript@5.4.5))
-
   packages/shadcn-svelte-ui-primitives:
     dependencies:
       bits-ui:
@@ -202,9 +150,6 @@ importers:
       cmdk-sv:
         specifier: ^0.0.17
         version: 0.0.17(svelte@4.2.17)
-      lucide-svelte:
-        specifier: ^0.408.0
-        version: 0.408.0(svelte@4.2.17)
       paneforge:
         specifier: ^0.0.5
         version: 0.0.5(svelte@4.2.17)
@@ -4107,6 +4052,11 @@ packages:
     hasBin: true
     peerDependencies:
       svelte: ^3.55.0 || ^4.0.0-next.0 || ^4.0.0 || ^5.0.0-next.0
+
+  svelte-dnd-action@0.9.49:
+    resolution: {integrity: sha512-kAIDTSMoTZcJCqUpT8COLAkF0/NRBoJ/pIbPUra9UVRnyJljLy6dLgRuL2OojSqyNs3nToBvn5XOGaFMREwjfQ==}
+    peerDependencies:
+      svelte: '>=3.23.0 || ^5.0.0-next.0'
 
   svelte-hmr@0.16.0:
     resolution: {integrity: sha512-Gyc7cOS3VJzLlfj7wKS0ZnzDVdv3Pn2IuVeJPk9m2skfhcu5bq3wtIZyQGggr7/Iim5rH5cncyQft/kRLupcnA==}
@@ -9263,6 +9213,10 @@ snapshots:
       - sass
       - stylus
       - sugarss
+
+  svelte-dnd-action@0.9.49(svelte@4.2.17):
+    dependencies:
+      svelte: 4.2.17
 
   svelte-hmr@0.16.0(svelte@4.2.17):
     dependencies:
