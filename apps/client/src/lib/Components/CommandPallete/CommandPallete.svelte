@@ -4,11 +4,11 @@
   import { cn } from '$lib/utils.js';
   import { Search } from 'lucide-svelte';
   import { commandPallete } from './commandPalleteStore.js';
-  import Popover from 'shadcn-svelte-ui-primitives/popover';
-  import Button from 'shadcn-svelte-ui-primitives/button';
-  import Command from 'shadcn-svelte-ui-primitives/command';
-  import ScrollArea from 'shadcn-svelte-ui-primitives/scroll-area';
+  import * as Popover from 'shadcn-ui/popover';
+  import * as Command from 'shadcn-ui/command';
+  import * as ScrollArea from 'shadcn-ui/scroll-area';
   import { allTasks, currentlyFocusedTaskId } from '../Board/taskStores.js';
+  import { Button } from 'shadcn-ui/button';
 
   let open = false;
   let selectedTask: string | undefined = undefined;

@@ -5,7 +5,7 @@ workspace:
     exclude: ['test', 'typecheck']
 
 dependsOn:
-  - 'shadcn-svelte-ui-primitives'
+  - 'shadcn-ui'
 
 fileGroups:
   app:

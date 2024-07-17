@@ -13,7 +13,7 @@
   },
   "references": [
     {
-      "path": "../../packages/shadcn-svelte-ui-primitives"
+      "path": "../../packages/shadcn-ui"
     }
   ]
 }

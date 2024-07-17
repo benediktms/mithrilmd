@@ -95,9 +95,9 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
-      shadcn-svelte-ui-primitives:
+      shadcn-ui:
         specifier: workspace:*
-        version: link:../../packages/shadcn-svelte-ui-primitives
+        version: link:../../packages/shadcn-ui
       svelte-dnd-action:
         specifier: ^0.9.49
         version: 0.9.49(svelte@4.2.17)
@@ -139,7 +139,7 @@ importers:
         specifier: ^6.0.2
         version: 6.0.2(@babel/core@7.24.6)(less@4.2.0)(postcss-load-config@5.1.0(jiti@1.21.6)(postcss@8.4.39))(postcss@8.4.39)(sass@1.77.2)(svelte@4.2.17)(typescript@5.4.5)
 
-  packages/shadcn-svelte-ui-primitives:
+  packages/shadcn-ui:
     dependencies:
       bits-ui:
         specifier: ^0.21.12

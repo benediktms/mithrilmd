@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import type { HTMLAttributes } from 'svelte/elements';
-  import Button from 'shadcn-svelte-ui-primitives/button';
+  import { Button } from 'shadcn-ui/button';
   import RadialProgress from './RadialProgress.svelte';
 
   let className: HTMLAttributes<HTMLDivElement>['class'] = undefined;

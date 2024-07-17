@@ -2,8 +2,8 @@
   import { Badge, X } from 'lucide-svelte';
   import { currentlyFocusedTaskId } from './taskStores';
   import type { Task } from './types.js';
-  import Card from 'shadcn-svelte-ui-primitives/card';
-  import Button from 'shadcn-svelte-ui-primitives/button';
+  import * as Card from 'shadcn-ui/card';
+  import { Button } from 'shadcn-ui/button';
 
   export let task: Task;
 </script>

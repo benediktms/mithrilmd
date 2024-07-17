@@ -1,9 +1,10 @@
 import Scrollbar from './scroll-area-scrollbar.svelte';
 import Root from './scroll-area.svelte';
 
-const ScrollArea = {
+export {
   Root,
-  Scrollbar
+  Scrollbar,
+  //
+  Root as ScrollArea,
+  Scrollbar as ScrollAreaScrollBar
 };
-
-export default ScrollArea;

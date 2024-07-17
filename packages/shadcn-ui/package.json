@@ -1,5 +1,5 @@
 {
-  "name": "shadcn-svelte-ui-primitives",
+  "name": "shadcn-ui",
   "version": "0.0.1",
   "scripts": {
     "dev": "vite dev",

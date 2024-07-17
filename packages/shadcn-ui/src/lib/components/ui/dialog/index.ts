@@ -12,7 +12,7 @@ const Root = DialogPrimitive.Root;
 const Trigger = DialogPrimitive.Trigger;
 const Close = DialogPrimitive.Close;
 
-const Dialog = {
+export {
   Root,
   Title,
   Portal,
@@ -22,7 +22,16 @@ const Dialog = {
   Overlay,
   Content,
   Description,
-  Close
+  Close,
+  //
+  Root as Dialog,
+  Title as DialogTitle,
+  Portal as DialogPortal,
+  Footer as DialogFooter,
+  Header as DialogHeader,
+  Trigger as DialogTrigger,
+  Overlay as DialogOverlay,
+  Content as DialogContent,
+  Description as DialogDescription,
+  Close as DialogClose
 };
-
-export default Dialog;

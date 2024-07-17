@@ -12,7 +12,7 @@ import Shortcut from './command-shortcut.svelte';
 
 const Loading = CommandPrimitive.Loading;
 
-const Command = {
+export {
   Root,
   Dialog,
   Empty,
@@ -22,7 +22,16 @@ const Command = {
   List,
   Separator,
   Shortcut,
-  Loading
+  Loading,
+  //
+  Root as Command,
+  Dialog as CommandDialog,
+  Empty as CommandEmpty,
+  Group as CommandGroup,
+  Item as CommandItem,
+  Input as CommandInput,
+  List as CommandList,
+  Separator as CommandSeparator,
+  Shortcut as CommandShortcut,
+  Loading as CommandLoading
 };
-
-export default Command;

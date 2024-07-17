@@ -4,11 +4,14 @@ const Root = PopoverPrimitive.Root;
 const Trigger = PopoverPrimitive.Trigger;
 const Close = PopoverPrimitive.Close;
 
-const Popover = {
+export {
   Root,
   Content,
   Trigger,
-  Close
+  Close,
+  //
+  Root as Popover,
+  Content as PopoverContent,
+  Trigger as PopoverTrigger,
+  Close as PopoverClose
 };
-
-export default Popover;

@@ -13,6 +13,6 @@
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "composite": true,
-    "outDir": "../../.moon/cache/types/packages/shadcn-svelte-ui-primitives"
+    "outDir": "../../.moon/cache/types/packages/shadcn-ui"
   }
 }

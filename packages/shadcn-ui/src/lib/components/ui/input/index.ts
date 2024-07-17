@@ -22,8 +22,8 @@ export type InputEvents = {
   wheel: FormInputEvent<WheelEvent>;
 };
 
-const Input = {
-  Root
+export {
+  Root,
+  //
+  Root as Input
 };
-
-export default Input;
