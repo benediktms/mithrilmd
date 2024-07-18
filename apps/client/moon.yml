@@ -5,13 +5,14 @@ workspace:
     exclude: ['test', 'typecheck']
 
 dependsOn:
-  - 'ui'
+  - 'shadcn-ui'
 
 fileGroups:
   app:
     - 'static/**/*'
     - 'svelte.config.*'
     - 'vite.config.*'
+    - 'tailwind.config.*'
 
 tasks:
   dev:

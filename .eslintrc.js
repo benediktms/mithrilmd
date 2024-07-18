@@ -26,7 +26,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['apps/**/*', 'packages/ui/**/*', 'packages/browser-package'],
+      files: ['apps/**/*', 'packages/shadcn-ui/**/*'],
       rules: {
         // App pages require default exports
         'import/no-default-export': 'off'

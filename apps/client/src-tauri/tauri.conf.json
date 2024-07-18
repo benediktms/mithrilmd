@@ -1,5 +1,5 @@
 {
-  "$schema": "../../../node_modules/@tauri-apps/cli/schema.json",
+  "$schema": "../node_modules/@tauri-apps/cli/schema.json",
   "build": {
     "beforeBuildCommand": "moon client:build",
     "beforeDevCommand": "moon client:dev",
@@ -74,7 +74,9 @@
         "height": 600,
         "resizable": true,
         "title": "MithrilMD",
-        "width": 800
+        "width": 800,
+        "titleBarStyle": "Overlay",
+        "hiddenTitle": true
       }
     ]
   }
