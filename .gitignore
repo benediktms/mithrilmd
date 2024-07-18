@@ -37,8 +37,11 @@ node_modules/
 .svelte-kit/
 .vercel/
 
-# Added by cargo
-
+# Cargo
 target/
 /**/*.env.*
 /**/*.env
+
+# Sqlite
+*.db
+*.sqlite
