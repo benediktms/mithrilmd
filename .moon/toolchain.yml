@@ -18,5 +18,5 @@ typescript:
   syncProjectReferences: true
 
 rust:
-  bins:
-    - 'sea-orm-cli'
+  # bins:
+  #   - 'sea-orm-cli'
