@@ -5,3 +5,7 @@ export {
   //
   Root as Label
 };
+
+const Label = Root;
+
+export default Label;

@@ -2,11 +2,11 @@
   import type { HTMLAttributes } from 'svelte/elements';
   import { ChevronsDown, ChevronsUp } from 'lucide-svelte';
   import { currentlyFocusedTaskId } from './taskStores';
-  import * as Collapsible from 'shadcn-ui/collapsible';
-  import { Button } from 'shadcn-ui/button';
-  import { Badge } from 'shadcn-ui/badge';
   import type { Task } from './types.js';
-  import * as Card from 'shadcn-ui/card';
+  import Card from '@shadcn-ui/card';
+  import Collapsible from '@shadcn-ui/collapsible';
+  import { Badge } from '@shadcn-ui/badge';
+  import Button from '@shadcn-ui/button';
 
   let className: HTMLAttributes<HTMLDivElement>['class'] = undefined;
   export { className as class };

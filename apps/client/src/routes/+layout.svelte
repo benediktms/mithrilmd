@@ -31,5 +31,7 @@
       </div>
     </div>
   </div>
-  <slot />
+  <div class="h-full pt-[38px]">
+    <slot />
+  </div>
 </div>

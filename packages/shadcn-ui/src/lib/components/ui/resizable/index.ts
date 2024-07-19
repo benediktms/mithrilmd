@@ -11,3 +11,11 @@ export {
   Pane as ResizablePane,
   Handle as ResizableHanlde
 };
+
+const Resizable = {
+  Pane,
+  PaneGroup,
+  Handle
+};
+
+export default Resizable;

@@ -1,14 +1,14 @@
 <script lang="ts">
   import Check from 'lucide-svelte/icons/check';
   import { onDestroy, tick } from 'svelte';
-  import { cn } from '$lib/utils.js';
   import { Search } from 'lucide-svelte';
   import { commandPallete } from './commandPalleteStore.js';
-  import * as Popover from 'shadcn-ui/popover';
-  import * as Command from 'shadcn-ui/command';
-  import * as ScrollArea from 'shadcn-ui/scroll-area';
   import { allTasks, currentlyFocusedTaskId } from '../Board/taskStores.js';
-  import { Button } from 'shadcn-ui/button';
+  import { cn } from '../../utils';
+  import { Button } from '@shadcn-ui/button';
+  import Popover from '@shadcn-ui/popover';
+  import Command from '@shadcn-ui/command';
+  import ScrollArea from '@shadcn-ui/scroll-area';
 
   let open = false;
   let selectedTask: string | undefined = undefined;

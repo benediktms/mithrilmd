@@ -11,20 +11,24 @@ fileGroups:
   app: []
   configs:
     - '*.{js,json,yml,yaml}'
+    - '!src-tauri/**'
   sources:
     - 'public/**/*'
     - 'src/**/*'
     - 'types/**/*'
+    - '!src-tauri/**'
   tests:
     - 'tests/**/*.test.*'
     - 'tests/**/*.stories.*'
     - '**/__tests__/**/*'
+    - '!src-tauri/**'
   assets:
     - 'assets/**/*'
     - 'images/**/*'
     - 'static/**/*'
     - '**/*.{scss,css}'
     - '**/*.{md,mdx}'
+    - '!src-tauri/**'
 
 tasks:
   # https://moonrepo.dev/docs/guides/examples/prettier

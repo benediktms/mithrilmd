@@ -47,3 +47,7 @@ export {
   type Events as ButtonEvents,
   buttonVariants
 };
+
+const Button = Root;
+
+export default Button;

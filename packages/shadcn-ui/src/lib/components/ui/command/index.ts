@@ -35,3 +35,18 @@ export {
   Shortcut as CommandShortcut,
   Loading as CommandLoading
 };
+
+const Command = {
+  Root,
+  Dialog,
+  Empty,
+  Group,
+  Item,
+  Input,
+  List,
+  Separator,
+  Shortcut,
+  Loading
+};
+
+export default Command;

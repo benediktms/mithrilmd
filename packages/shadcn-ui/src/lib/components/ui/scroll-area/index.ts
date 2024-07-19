@@ -8,3 +8,10 @@ export {
   Root as ScrollArea,
   Scrollbar as ScrollAreaScrollBar
 };
+
+const ScrollArea = {
+  Root,
+  Scrollbar
+};
+
+export default ScrollArea;

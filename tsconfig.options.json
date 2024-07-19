@@ -17,6 +17,7 @@
     "noEmit": false,
     "noEmitOnError": true,
     "skipLibCheck": true,
-    "verbatimModuleSyntax": false
+    "verbatimModuleSyntax": false,
+    "sourceMap": true
   }
 }

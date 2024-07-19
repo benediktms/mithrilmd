@@ -21,4 +21,15 @@ export {
   Title as CardTitle
 };
 
+const Card = {
+  Root,
+  Content,
+  Description,
+  Footer,
+  Header,
+  Title
+};
+
+export default Card;
+
 export type HeadingLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';

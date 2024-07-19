@@ -3,9 +3,9 @@
   import TaskDetails from './TaskDetails.svelte';
   import type { HTMLAttributes } from 'svelte/elements';
   import { tasksColumns, currentlyFocusedTaskId } from './taskStores.js';
-  import { cn } from '$lib/utils.js';
-  import * as Resizable from 'shadcn-ui/resizable';
   import type { Task } from './types';
+  import { cn } from '../../utils';
+  import Resizable from '@shadcn-ui/resizable';
 
   let className: HTMLAttributes<HTMLDivElement>['class'] = undefined;
   export { className as class };

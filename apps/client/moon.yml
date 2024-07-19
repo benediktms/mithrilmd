@@ -13,6 +13,7 @@ fileGroups:
     - 'svelte.config.*'
     - 'vite.config.*'
     - 'tailwind.config.*'
+    - '!src-tauri/**'
 
 tasks:
   dev:

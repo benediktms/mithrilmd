@@ -13,3 +13,11 @@ export {
   Content as CollapsibleContent,
   Trigger as CollapsibleTrigger
 };
+
+const Collapsible = {
+  Root,
+  Content,
+  Trigger
+};
+
+export default Collapsible;

@@ -1,5 +1,4 @@
-<script lang="ts">
-  import Board from '$lib/Components/Board/Board.svelte';
+<script>
 </script>
 
-<Board class="h-full pt-[38px]" />
+<h1>vaults</h1>

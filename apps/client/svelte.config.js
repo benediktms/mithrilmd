@@ -11,7 +11,21 @@ const config = {
   kit: {
     adapter: adapter(),
     alias: {
-      $lib: 'src/lib'
+      $lib: 'src/lib',
+      '@shadcn-ui/badge': '../../packages/shadcn-ui/src/lib/components/ui/badge/index.ts',
+      '@shadcn-ui/button': '../../packages/shadcn-ui/src/lib/components/ui/button/index.ts',
+      '@shadcn-ui/card': '../../packages/shadcn-ui/src/lib/components/ui/card/index.ts',
+      '@shadcn-ui/collapsible':
+        '../../packages/shadcn-ui/src/lib/components/ui/collapsible/index.ts',
+      '@shadcn-ui/command': '../../packages/shadcn-ui/src/lib/components/ui/command/index.ts',
+      '@shadcn-ui/dialog': '../../packages/shadcn-ui/src/lib/components/ui/dialog/index.ts',
+      '@shadcn-ui/input': '../../packages/shadcn-ui/src/lib/components/ui/input/index.ts',
+      '@shadcn-ui/label': '../../packages/shadcn-ui/src/lib/components/ui/label/index.ts',
+      '@shadcn-ui/popover': '../../packages/shadcn-ui/src/lib/components/ui/popover/index.ts',
+      '@shadcn-ui/resizable': '../../packages/shadcn-ui/src/lib/components/ui/resizable/index.ts',
+      '@shadcn-ui/scroll-area':
+        '../../packages/shadcn-ui/src/lib/components/ui/scroll-area/index.ts',
+      '@shadcn-ui/separator': '../../packages/shadcn-ui/src/lib/components/ui/separator/index.ts'
     }
   }
 };

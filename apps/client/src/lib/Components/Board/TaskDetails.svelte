@@ -2,16 +2,16 @@
   import { Badge, X } from 'lucide-svelte';
   import { currentlyFocusedTaskId } from './taskStores';
   import type { Task } from './types.js';
-  import * as Card from 'shadcn-ui/card';
-  import { Button } from 'shadcn-ui/button';
+  import Button from '@shadcn-ui/button';
+  import Card from '@shadcn-ui/card';
 
   export let task: Task;
 </script>
 
 <Card.Root class="mt-4 border-0 shadow-none">
   <div class="mx-5 flex items-end justify-end">
-    <Button variant="ghost" size="icon" on:click={() => ($currentlyFocusedTaskId = undefined)}
-      ><X />
+    <Button variant="ghost" size="icon" on:click={() => ($currentlyFocusedTaskId = undefined)}>
+      <X />
     </Button>
   </div>
   <Card.Header>

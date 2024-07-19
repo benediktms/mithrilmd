@@ -4,8 +4,8 @@
   import type { HTMLAttributes } from 'svelte/elements';
   import TaskCard from './TaskCard.svelte';
   import { type Task, type TaskColumnId, Status } from './types';
-  import { cn } from '$lib/utils';
-  import { ScrollArea } from 'shadcn-ui/scroll-area';
+  import { cn } from '../../utils';
+  import ScrollArea from '@shadcn-ui/scroll-area';
 
   let className: HTMLAttributes<HTMLDivElement>['class'] = undefined;
   export { className as class };
@@ -30,7 +30,7 @@
 
 <div id={columnId.toUpperCase()} class={cn(className, 'flex flex-col overflow-y-hidden')}>
   <h2 class="text-center text-lg">{columnNameMap[name]}</h2>
-  <ScrollArea>
+  <ScrollArea.Root>
     <div
       class="m-2 h-full pr-2"
       use:dndzone={{
@@ -46,5 +46,5 @@
         </div>
       {/each}
     </div>
-  </ScrollArea>
+  </ScrollArea.Root>
 </div>

@@ -27,3 +27,7 @@ export {
   //
   Root as Input
 };
+
+const Input = Root;
+
+export default Input;

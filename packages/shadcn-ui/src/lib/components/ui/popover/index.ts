@@ -15,3 +15,12 @@ export {
   Trigger as PopoverTrigger,
   Close as PopoverClose
 };
+
+const Popover = {
+  Root,
+  Content,
+  Trigger,
+  Close
+};
+
+export default Popover;

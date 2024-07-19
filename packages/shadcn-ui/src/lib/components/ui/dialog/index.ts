@@ -35,3 +35,18 @@ export {
   Description as DialogDescription,
   Close as DialogClose
 };
+
+const Dialog = {
+  Root,
+  Title,
+  Portal,
+  Footer,
+  Header,
+  Trigger,
+  Overlay,
+  Content,
+  Description,
+  Close
+};
+
+export default Dialog;
