@@ -15,12 +15,6 @@ const config = {
     adapter: adapter(),
     alias: {
       $ui: 'src/lib/components/ui'
-    },
-    typescript: {
-      config: config => {
-        config = { extends: '../../../tsconfig.options.json', ...config };
-        return config;
-      }
     }
   }
 };

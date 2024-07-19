@@ -10,7 +10,7 @@ fileGroups:
     - 'tailwind.config.*'
 tasks:
   build:
-    command: 'pnpm build'
+    command: 'vite build'
     inputs:
       - '@group(sources)'
       - 'tsconfig.json'

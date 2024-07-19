@@ -8,7 +8,7 @@ node:
   addEnginesConstraint: true
   dedupeOnLockfileChange: true
   dependencyVersionFormat: 'workspace'
-  syncProjectWorkspaceDependencies: true
+  syncProjectWorkspaceDependencies: false
   syncVersionManagerConfig: 'nvm'
 
 typescript:
