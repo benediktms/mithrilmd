@@ -17,6 +17,6 @@ typescript:
   routeOutDirToCache: true
   syncProjectReferences: true
 
-rust:
+rust: {}
   # bins:
   #   - 'sea-orm-cli'
