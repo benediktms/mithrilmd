@@ -10,3 +10,4 @@ export * as Popover from './popover/index.js';
 export * as Resizable from './resizable/index.js';
 export * as ScrollArea from './scroll-area/index.js';
 export * as Seperator from './separator/index.js';
+export * as Form from './form/index.js';

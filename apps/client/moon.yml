@@ -18,6 +18,10 @@ fileGroups:
 tasks:
   dev:
     command: 'vite dev'
+    inputs:
+      - 'vite.config.*'
+      - 'svelte.config.*'
+      - 'tsconfig.json'
     local: true
 
   tauri:

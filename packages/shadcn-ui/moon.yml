@@ -19,6 +19,10 @@ tasks:
   # Run the development server
   dev:
     command: 'vite dev'
+    inputs:
+      - 'vite.config.*'
+      - 'svelte.config.*'
+      - 'tsconfig.json'
     local: true
 
   # Optimize dependencies

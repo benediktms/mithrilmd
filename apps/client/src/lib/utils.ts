@@ -54,3 +54,13 @@ export const flyAndScale = (
     easing: cubicOut
   };
 };
+
+export function typedObjectKeys<T extends Record<string, unknown>, K extends keyof T>(obj: T): K[] {
+  return Object.keys(obj) as K[];
+}
+
+export function typedObjectEntries<T extends Record<string, unknown>, K extends keyof T>(
+  obj: T
+): Array<[K, T[K]]> {
+  return Object.entries(obj) as Array<[K, T[K]]>;
+}

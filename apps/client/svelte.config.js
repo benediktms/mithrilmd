@@ -27,7 +27,8 @@ const config = {
       '@shadcn-ui/resizable': '../../packages/shadcn-ui/src/lib/components/ui/resizable/index.ts',
       '@shadcn-ui/scroll-area':
         '../../packages/shadcn-ui/src/lib/components/ui/scroll-area/index.ts',
-      '@shadcn-ui/separator': '../../packages/shadcn-ui/src/lib/components/ui/separator/index.ts'
+      '@shadcn-ui/separator': '../../packages/shadcn-ui/src/lib/components/ui/separator/index.ts',
+      '@shadcn-ui/form': '../../packages/shadcn-ui/src/lib/components/ui/form/index.ts'
     }
   }
 };
