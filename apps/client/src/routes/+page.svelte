@@ -1,9 +1,10 @@
 <script lang="ts">
   import Form from '@shadcn-ui/form';
-  import { createVault, type CreateVaultSchema } from './schema';
+  import { createVault } from './schema';
   import Input from '@shadcn-ui/input';
   import { superForm, defaults } from 'sveltekit-superforms';
   import { zod, zodClient } from 'sveltekit-superforms/adapters';
+  import { setupNewVault } from '../types/bindings';
 
   const form = superForm(defaults({ name: '', location: '' }, zod(createVault)), {
     validators: zodClient(createVault),
@@ -12,8 +13,12 @@
 
   const { form: formData, enhance, validate } = form;
 
-  function onSubmit(_: SubmitEvent) {
-    console.log($formData);
+  async function onSubmit(_: SubmitEvent) {
+    let res = await setupNewVault({
+      name: $formData.name,
+      location: $formData.location
+    });
+    console.log(res);
   }
 </script>
 

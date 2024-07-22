@@ -32,14 +32,16 @@ tauri = { version = "1.6.0", features = [
 log = "0.4.22"
 tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
 tracing = "0.1.40"
-sea-orm = { version = "0.12.15", features = [
-  "sqlx-sqlite",
-  "runtime-tokio-rustls",
-  "debug-print",
-  "with-chrono"
-] }
 anyhow = "1.0.8"
 dotenvy = "0.15.7"
+thiserror = "1.0.63"
+specta = "1.0.5"
+tauri-specta = { version = "1.0.2", features = ["javascript", "typescript"] }
+
+[dependencies.sea-orm]
+version = "0.12.15"
+default-features = false
+features = ["sqlx-sqlite", "runtime-tokio-rustls", "debug-print", "with-chrono"]
 
 [features]
 # this feature is used for production builds or when `devPath` points to the filesystem and the built-in dev server is disabled.

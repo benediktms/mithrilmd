@@ -1,5 +1,6 @@
 use tauri::{AppHandle, CustomMenuItem, Manager, SystemTray, SystemTrayEvent, SystemTrayMenu};
 
+#[must_use]
 pub fn make_system_tray() -> SystemTray {
     SystemTray::new().with_menu(
         SystemTrayMenu::new()

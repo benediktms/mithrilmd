@@ -1,15 +1,12 @@
 // Prevents additional console window on Windows in release, DO NOT REMOVE!!
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
-mod startup;
-mod state;
-mod system_tray;
-mod util;
-
+use app::{
+    repository::*,
+    startup::{init_async, init_tracing},
+    system_tray::{make_system_tray, system_tray_event_handler},
+};
 use tauri::{LogicalSize, Manager, Size, WindowEvent};
-
-use startup::{init_async, init_tracing};
-use system_tray::{make_system_tray, system_tray_event_handler};
 
 #[tauri::command]
 fn greet(name: &str) -> String {
@@ -47,7 +44,19 @@ fn main() {
                 api.prevent_close();
             }
         })
-        .invoke_handler(tauri::generate_handler![greet])
+        .invoke_handler(tauri::generate_handler![greet, setup_new_vault])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
+}
+
+#[cfg(test)]
+mod tests {
+    use app::repository::*;
+    use specta::collect_types;
+    use tauri_specta::ts;
+
+    #[test]
+    fn export_bindings() {
+        ts::export(collect_types![setup_new_vault], "../src/types/bindings.ts").unwrap();
+    }
 }

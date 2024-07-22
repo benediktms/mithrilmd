@@ -9,7 +9,8 @@ use tracing_subscriber::{fmt, layer::SubscriberExt, util::SubscriberInitExt, Env
 use crate::{state::AppState, util::load_from_env};
 
 pub async fn init_async(app: AppHandle) -> Result<(), anyhow::Error> {
-    let state = AppState::new(init_db_connection().await?);
+    let conn = init_db_connection().await?;
+    let state = AppState::new(conn);
 
     app.manage(state);
 
