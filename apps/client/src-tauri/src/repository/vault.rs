@@ -1,3 +1,5 @@
+use entity::entities::vault;
+use sea_orm::{EntityTrait, Set};
 use serde::{Deserialize, Serialize};
 use specta::Type;
 use tauri::{AppHandle, Manager};
@@ -25,12 +27,11 @@ pub fn setup_new_vault(
     input: SetupVaultInput,
 ) -> Result<SetupVaultResponse, ApplicationError> {
     let SetupVaultInput { name, location } = input;
-    println!("starting setup for new vault vault {name} at location {location}");
 
     Ok(
         match tauri::async_runtime::block_on(create_vault(app.state::<AppState>(), name, location))
         {
-            Ok(()) => SetupVaultResponse {
+            Ok(_) => SetupVaultResponse {
                 success: true,
                 error: None,
             },
@@ -42,17 +43,28 @@ pub fn setup_new_vault(
     )
 }
 
+// TODO: add tests for this
+#[instrument(skip(state), ret)]
 async fn create_vault(
     state: tauri::State<'_, AppState>,
     name: String,
     location: String,
-) -> Result<(), ApplicationError> {
+) -> Result<i32, ApplicationError> {
     let conn = state.conn.lock().await.clone();
     conn.ping()
         .await
         .map_err(|e| ApplicationError::DatabaseError(e.to_string()))?;
 
-    println!("creating vault {name} at location {location}");
+    let new_vault = vault::ActiveModel {
+        path: Set(location),
+        name: Set(name),
+        ..Default::default()
+    };
 
-    Ok(())
+    let res = vault::Entity::insert(new_vault)
+        .exec(&conn)
+        .await
+        .map_err(|e| ApplicationError::DatabaseError(e.to_string()))?;
+
+    Ok(res.last_insert_id)
 }

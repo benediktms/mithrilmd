@@ -19,6 +19,7 @@ impl MigrationTrait for Migration {
                             .primary_key(),
                     )
                     .col(ColumnDef::new(Vault::Path).string().not_null())
+                    .col(ColumnDef::new(Vault::Name).string().not_null())
                     .col(
                         ColumnDef::new(Vault::CreatedAt)
                             .timestamp_with_time_zone()
@@ -35,21 +36,21 @@ impl MigrationTrait for Migration {
             )
             .await;
 
-        let db = manager.get_connection();
-
-        db.execute_unprepared(
-            "CREATE TRIGGER vault_updated_at
-                AFTER
-                  UPDATE
-                ON vault
-                FOR EACH ROW
-            BEGIN
-                UPDATE vault
-                SET updated_at = CURRENT_TIMESTAMP
-                WHERE id = OLD.id;
-            END",
-        )
-        .await?;
+        // this gets done in the active model implementation of the entity
+        // let db = manager.get_connection();
+        // db.execute_unprepared(
+        //     "CREATE TRIGGER vault_updated_at
+        //         AFTER
+        //           UPDATE
+        //         ON vault
+        //         FOR EACH ROW
+        //     BEGIN
+        //         UPDATE vault
+        //         SET updated_at = CURRENT_TIMESTAMP
+        //         WHERE id = OLD.id;
+        //     END",
+        // )
+        // .await?;
 
         Ok(())
     }
@@ -66,6 +67,7 @@ enum Vault {
     Table,
     Id,
     Path,
+    Name,
     CreatedAt,
     UpdatedAt,
 }

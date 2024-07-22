@@ -9,6 +9,7 @@ name = "entity"
 path = "src/lib.rs"
 
 [dependencies]
+chrono.workspace = true
 sea-orm = { version = "0.12", features = [
   "sqlx-sqlite",
   "runtime-tokio-rustls",

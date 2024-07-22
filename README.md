@@ -1,39 +1,6 @@
-# moon examples
+# Setup
 
-A collection of packages and applications using moon and popular tooling.
+create 2 .env files with the following configuration:
 
-## Usage
-
-To begin, we suggest installing moon globally: https://moonrepo.dev/docs/install
-
-Once installed, run the following commands for common tasks:
-
-- `moon check --all` - Run _all_ tasks (below).
-- `moon run :build` - Build all projects.
-- `moon run :lint` - Lint code in all projects.
-- `moon run :test` - Run tests in all projects.
-- `moon run :format` - Format code in all projects.
-- `moon run :typecheck` - Type check code in all projects.
-
-Tasks can also be focused to individual projects. The list of projects can be found in
-`.moon/workspace.yml`.
-
-- `moon check <project>`
-- `moon run <project>:<task>`
-- `moon run <project>:dev` - For applications, starts the development server.
-
-## JavaScript
-
-The following tools are configured as moon tasks.
-
-- ESLint
-- Jest
-- Packemon
-- Prettier
-- TypeScript
-
-### Frameworks
-
-The following frameworks have been integrated into moon.
-
-- [client](./apps/client/README.md)
+1. At the workspace root with `DATABASE_URL="sqlite://apps/client/src-tauri/mithrilmd.db?mode=rwc"`
+2. At `apps/client/src-tauri` with `DATABASE_URL="sqlite://mithrilmd.db?mode=rwc"`
