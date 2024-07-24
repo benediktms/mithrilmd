@@ -16,8 +16,8 @@
     clippy::used_underscore_binding
 )]
 
-pub mod repository;
 pub mod startup;
 pub mod state;
 pub mod system_tray;
 pub mod util;
+pub mod vault;

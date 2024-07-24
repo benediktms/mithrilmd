@@ -1,3 +1,5 @@
+use std::process::Command;
+
 use entity::entities::vault;
 use sea_orm::{EntityTrait, Set};
 use serde::{Deserialize, Serialize};
@@ -67,4 +69,12 @@ async fn create_vault(
         .map_err(|e| ApplicationError::DatabaseError(e.to_string()))?;
 
     Ok(res.last_insert_id)
+}
+
+#[tauri::command]
+#[specta::specta]
+#[instrument(ret)]
+pub fn find_existing_vault() {
+    // NOTE: macos specific
+    Command::new("open").arg("-R");
 }

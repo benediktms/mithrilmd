@@ -2,9 +2,9 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 use app::{
-    repository::*,
     startup::{init_async, init_tracing},
     system_tray::{make_system_tray, system_tray_event_handler},
+    vault::*,
 };
 use tauri::{LogicalSize, Manager, Size, WindowEvent};
 
@@ -51,7 +51,7 @@ fn main() {
 
 #[cfg(test)]
 mod tests {
-    use app::repository::*;
+    use app::vault::*;
     use specta::collect_types;
     use tauri_specta::ts;
 

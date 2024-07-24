@@ -3,7 +3,10 @@
   import type { InputEvents } from './index.js';
   import { cn } from '../../../utils.js';
 
-  type $$Props = HTMLInputAttributes;
+  // TODO: This should be fixed in svelte 5 (see https://github.com/sveltejs/svelte/pull/10847/files#diff-6bbb3fa1a2ee2d1003c805a647054e36fa2e140fdf2033c0f0412597464ab754R1059)
+  // but is not enabled in svelte 4.
+  type $$WebkitDir = { webkitdirectory?: boolean | undefined | null };
+  type $$Props = HTMLInputAttributes & $$WebkitDir;
   type $$Events = InputEvents;
 
   let className: $$Props['class'] = undefined;

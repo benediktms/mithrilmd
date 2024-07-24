@@ -23,6 +23,31 @@
         "unmaximize": true,
         "unminimize": true,
         "startDragging": true
+      },
+      "fs": {
+        "all": false,
+        "copyFile": false,
+        "createDir": true,
+        "exists": true,
+        "readDir": true,
+        "readFile": true,
+        "removeDir": false,
+        "removeFile": true,
+        "renameFile": true,
+        "scope": [
+          "$HOME",
+          "$DOCUMENT",
+          "$CONFIG"
+        ],
+        "writeFile": true
+      },
+      "dialog": {
+        "all": false,
+        "ask": false,
+        "confirm": false,
+        "message": false,
+        "open": true,
+        "save": true
       }
     },
     "systemTray": {
