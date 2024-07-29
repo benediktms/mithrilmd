@@ -29,10 +29,8 @@
 </script>
 
 <div class="container">
-  <div class="max-w-lg">
-    <h1 class="text-lg">create vault page</h1>
-
-    <form use:enhance on:submit={onSubmit}>
+  <div class="mx-auto max-w-lg">
+    <form class="mt-8" use:enhance on:submit={onSubmit}>
       <Form.Field {form} name="name">
         <Form.Control let:attrs>
           <Form.Label>Vault name</Form.Label>
