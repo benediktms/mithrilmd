@@ -3,7 +3,7 @@
   import type { Command as CommandPrimitive } from 'cmdk-sv';
   import Command from './command.svelte';
   import DialogContent from '../dialog/dialog-content.svelte';
-  import Dialog from '../dialog/index.js';
+  import Dialog from '../dialog/index';
 
   type $$Props = DialogPrimitive.Props & CommandPrimitive.CommandProps;
 

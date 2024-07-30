@@ -3,7 +3,7 @@
   import Portal from './dialog-portal.svelte';
   import Overlay from './dialog-overlay.svelte';
   import X from 'lucide-svelte/icons/x';
-  import { cn, flyAndScale } from '../../../utils.js';
+  import { cn, flyAndScale } from '../../../utils';
 
   type $$Props = DialogPrimitive.ContentProps;
 

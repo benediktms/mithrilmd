@@ -13,8 +13,8 @@
     "declaration": true,
     "declarationMap": true,
     "composite": true,
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
     "outDir": "../../.moon/cache/types/packages/shadcn-ui"
   }
 }

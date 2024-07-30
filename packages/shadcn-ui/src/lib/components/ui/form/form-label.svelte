@@ -1,8 +1,8 @@
 <script lang="ts">
   import type { Label as LabelPrimitive } from 'bits-ui';
   import { getFormControl } from 'formsnap';
-  import { cn } from '$lib/utils.js';
-  import Label from '../label/index.js';
+  import { cn } from '$lib/utils';
+  import Label from '../label/index';
 
   type $$Props = LabelPrimitive.Props;
 
