@@ -9,6 +9,7 @@
   import VaultMenuRow from '$lib/Components/VaultMenu/VaultMenuRow.svelte';
   import { onMount } from 'svelte';
   import { goto } from '$app/navigation';
+  import Button from '../../../../packages/shadcn-ui/src/lib/components/ui/button/button.svelte';
 
   const form = superForm(defaults({ name: '', location: '' }, zod(createVaultSchema)), {
     validators: zodClient(createVaultSchema),
@@ -78,7 +79,7 @@
   });
 </script>
 
-<div class="mx-auto flex h-full max-w-lg flex-col items-center">
+<div class="mx-auto flex h-full max-w-lg flex-col items-center md:max-w-2xl">
   <div class="mb-5 mt-10">
     <h1 class="text-center text-4xl">Vaults</h1>
   </div>
@@ -122,13 +123,12 @@
     </form>
     <div class="mt-4">
       <p class="text-muted-foreground my-8 w-full text-center text-xs">select an existing vault</p>
-      <ul class="my-8 list-disc">
+      <ul class="my-8">
         {#each vaults as vault (vault.id)}
-          <li class="mx-8 list-item">
-            <span>
-              {vault.name}
-            </span>
-            <span class="text-muted-foreground">- {vault.path}</span>
+          <li>
+            <Button variant="link" on:click={() => goto(`/vaults/${vault.id}/board`)}
+              >{vault.name}</Button
+            >
           </li>
         {/each}
       </ul>
