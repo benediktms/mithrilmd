@@ -1,9 +1,10 @@
 <script lang="ts">
-  import { Badge, X } from 'lucide-svelte';
+  import { X } from 'lucide-svelte';
   import { currentlyFocusedTaskId } from './taskStores';
   import type { Task } from './types.js';
   import Button from '@shadcn-ui/button';
   import Card from '@shadcn-ui/card';
+  import { Badge } from '@shadcn-ui/badge';
 
   export let task: Task;
 </script>
