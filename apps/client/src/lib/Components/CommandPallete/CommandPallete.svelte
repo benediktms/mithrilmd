@@ -1,6 +1,6 @@
 <script lang="ts">
   import Check from 'lucide-svelte/icons/check';
-  import { onDestroy, tick } from 'svelte';
+  import { onDestroy, onMount, tick } from 'svelte';
   import { Search } from 'lucide-svelte';
   import { commandPallete } from './commandPalleteStore.js';
   import { allTasks, currentlyFocusedTaskId } from '../Board/taskStores.js';
@@ -31,8 +31,21 @@
     selectedTask = state.value;
   });
 
+  function handleKeydown(e: KeyboardEvent) {
+    // TODO: add ctrl key option for windows/linux
+    if (e.key === 'p' && e.metaKey) {
+      e.preventDefault();
+      open = !open;
+    }
+  }
+
+  onMount(() => {
+    document.addEventListener('keydown', handleKeydown);
+  });
+
   onDestroy(() => {
     unsubscribe();
+    document.removeEventListener('keydown', handleKeydown);
   });
 </script>
 
