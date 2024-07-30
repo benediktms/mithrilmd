@@ -31,6 +31,7 @@
     });
 
     if (res.vault_id) {
+      localStorage.setItem('active-vault', res.vault_id.toString());
       goto(`/vaults/${res.vault_id}/board`);
     } else if (res.error) {
       throw res.error;
@@ -69,7 +70,19 @@
     await createVault();
   }
 
+  function loadVault(id: number) {
+    localStorage.setItem('active-vault', id.toString());
+    goto(`/vaults/${id}/board`);
+  }
+
   onMount(async () => {
+    // TODO: delay page render until mounting function is settled
+    let activeVaultId = localStorage.getItem('active-vault');
+
+    if (activeVaultId) {
+      goto(`/vaults/${activeVaultId}/board`);
+    }
+
     const vaultsRes = await getAllVaults();
 
     // TODO: add notifications here
@@ -126,9 +139,7 @@
       <ul class="my-8">
         {#each vaults as vault (vault.id)}
           <li>
-            <Button variant="link" on:click={() => goto(`/vaults/${vault.id}/board`)}
-              >{vault.name}</Button
-            >
+            <Button variant="link" on:click={() => loadVault(vault.id)}>{vault.name}</Button>
           </li>
         {/each}
       </ul>
