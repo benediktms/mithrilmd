@@ -19,7 +19,9 @@ impl AppState {
 }
 
 #[derive(Debug, thiserror::Error, Serialize, Deserialize, Type)]
-pub enum ApplicationError {
+pub enum RepositoryError {
     #[error("Query failed: {0}")]
     DatabaseError(String),
+    #[error("Entity from table {0} with id {1} not found")]
+    NotFoundByPrimaryKey(String, i32),
 }

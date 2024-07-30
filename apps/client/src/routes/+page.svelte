@@ -1,15 +1,17 @@
 <script lang="ts">
   import Form from '@shadcn-ui/form';
-  import { createVault } from './schema';
+  import { createVaultSchema } from './schema';
   import Input from '@shadcn-ui/input';
   import { superForm, defaults } from 'sveltekit-superforms';
   import { zod, zodClient } from 'sveltekit-superforms/adapters';
-  import { setupNewVault } from '../types/bindings';
+  import { getAllVaults, setupNewVault, type Vault } from '../types/bindings';
   import { open } from '@tauri-apps/api/dialog';
   import VaultMenuRow from '$lib/Components/VaultMenu/VaultMenuRow.svelte';
+  import { onMount } from 'svelte';
+  import { goto } from '$app/navigation';
 
-  const form = superForm(defaults({ name: '', location: '' }, zod(createVault)), {
-    validators: zodClient(createVault),
+  const form = superForm(defaults({ name: '', location: '' }, zod(createVaultSchema)), {
+    validators: zodClient(createVaultSchema),
     SPA: true,
     clearOnSubmit: 'none'
   });
@@ -17,19 +19,71 @@
   const { form: formData, enhance, validate, errors } = form;
 
   $: isDisabled = !!$errors._errors?.length || !$formData.location.length || !$formData.name.length;
+  let vaults: Vault[] = [];
 
-  // TODO: add proper handler with notifications
-  async function onSubmit(_: SubmitEvent) {
+  async function createVault() {
+    // TODO: this will fail if a vault exists in the database with the same name, but a different
+    // path. This needs to be taken into account when implementing filewatcher logic
     let res = await setupNewVault({
       name: $formData.name,
       location: $formData.location
     });
-    console.log(res);
+
+    if (res.vault_id) {
+      goto(`/vaults/${res.vault_id}/board`);
+    } else if (res.error) {
+      throw res.error;
+    }
   }
+
+  // TODO: add proper handler with notifications
+  async function onSubmit(_: SubmitEvent) {
+    await createVault();
+  }
+
+  async function locateExistingVault() {
+    const selected = await open({
+      directory: true,
+      title: 'Select folder',
+      defaultPath: '~/Documents'
+    });
+
+    if (!selected || Array.isArray(selected) || !formData) {
+      return;
+    }
+
+    const pathSegemnts = selected?.split('/');
+    const vaultName = pathSegemnts[pathSegemnts.length - 1];
+
+    $formData.name = vaultName;
+    $formData.location = selected;
+
+    validate('location');
+    validate('name');
+
+    if ($errors._errors?.length) {
+      return;
+    }
+
+    await createVault();
+  }
+
+  onMount(async () => {
+    const vaultsRes = await getAllVaults();
+
+    // TODO: add notifications here
+    if (vaultsRes.vaults.length) {
+      vaults = vaultsRes.vaults;
+    }
+  });
 </script>
 
-<div class="container">
-  <div class="mx-auto max-w-lg">
+<div class="mx-auto flex h-full max-w-lg flex-col items-center">
+  <div class="mb-5 mt-10">
+    <h1 class="text-center text-4xl">Vaults</h1>
+  </div>
+  <div class="w-full">
+    <p class="text-muted-foreground my-8 w-full text-center text-xs">create a new vault</p>
     <form class="mt-8" use:enhance on:submit={onSubmit}>
       <Form.Field {form} name="name">
         <Form.Control let:attrs>
@@ -38,65 +92,53 @@
         </Form.Control>
         <Form.FieldErrors />
       </Form.Field>
+      <div class="mt-4">
+        <Form.Field {form} name="location">
+          <VaultMenuRow
+            title="Create new vault"
+            description="Select a folder to set up a new Mithril vault"
+            buttonText="Select"
+            overrideText={$formData.location}
+            callback={async () => {
+              const selected = await open({
+                directory: true,
+                title: 'Select folder',
+                defaultPath: '~/Documents'
+              });
+              if (!selected || Array.isArray(selected)) {
+                return;
+              }
+
+              if (formData) {
+                $formData.location = selected;
+                validate('location');
+              }
+            }}
+          />
+          <Form.FieldErrors />
+          <Form.Button disabled={isDisabled} class="w-full">Submit</Form.Button>
+        </Form.Field>
+      </div>
     </form>
     <div class="mt-4">
-      <Form.Field {form} name="location">
-        <VaultMenuRow
-          title="Create new vault"
-          description="Create a new folder to set up a Mithril vault"
-          buttonText="Create"
-          callback={async () => {
-            const selected = await open({
-              directory: true,
-              title: 'Select folder',
-              defaultPath: '~/Documents'
-            });
-
-            console.log(selected);
-            if (!selected || Array.isArray(selected)) {
-              return;
-            }
-
-            if (formData) {
-              $formData.location = selected;
-              validate('location');
-            }
-          }}
-        />
-        <Form.FieldErrors />
-        <Form.Button disabled={isDisabled} class="w-full">Submit</Form.Button>
-      </Form.Field>
-      <p class="text-muted-foreground my-8 w-full text-center text-xs">
-        or select an existing folder
-      </p>
+      <p class="text-muted-foreground my-8 w-full text-center text-xs">select an existing vault</p>
+      <ul class="my-8 list-disc">
+        {#each vaults as vault (vault.id)}
+          <li class="mx-8 list-item">
+            <span>
+              {vault.name}
+            </span>
+            <span class="text-muted-foreground">- {vault.path}</span>
+          </li>
+        {/each}
+      </ul>
+      <p class="text-muted-foreground my-8 w-full text-center text-xs">locate a vault</p>
       <VaultMenuRow
         title="Open vault"
-        description="Open an existing folder as a vault"
+        description="Select an existing folder to open as a vault"
         buttonText="Open"
-        callback={async () => {
-          const selected = await open({
-            directory: true,
-            title: 'Select folder',
-            defaultPath: '~/Documents'
-          });
-
-          console.log(selected);
-
-          if (!selected || Array.isArray(selected)) {
-            return;
-          }
-
-          const pathSegemnts = selected?.split('/');
-          const vaultName = pathSegemnts[pathSegemnts.length - 1];
-          console.log(vaultName);
-
-          if (formData) {
-            $formData.name = vaultName;
-            $formData.location = '';
-            validate('location');
-            validate('name');
-          }
-        }}
+        overrideText={undefined}
+        callback={locateExistingVault}
       />
     </div>
   </div>

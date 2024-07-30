@@ -1,5 +1,3 @@
-use std::process::Command;
-
 use entity::entities::vault;
 use sea_orm::{EntityTrait, Set};
 use serde::{Deserialize, Serialize};
@@ -7,7 +5,7 @@ use specta::Type;
 use tauri::{AppHandle, Manager};
 use tracing::instrument;
 
-use crate::state::{AppState, ApplicationError};
+use crate::state::{AppState, RepositoryError};
 
 #[derive(Debug, Serialize, Deserialize, Type)]
 pub struct SetupVaultInput {
@@ -17,8 +15,8 @@ pub struct SetupVaultInput {
 
 #[derive(Debug, Serialize, Deserialize, Type)]
 pub struct SetupVaultResponse {
-    success: bool,
-    error: Option<ApplicationError>,
+    vault_id: Option<i32>,
+    error: Option<RepositoryError>,
 }
 
 #[tauri::command]
@@ -27,18 +25,18 @@ pub struct SetupVaultResponse {
 pub fn setup_new_vault(
     app: AppHandle,
     input: SetupVaultInput,
-) -> Result<SetupVaultResponse, ApplicationError> {
+) -> Result<SetupVaultResponse, RepositoryError> {
     let SetupVaultInput { name, location } = input;
 
     Ok(
         match tauri::async_runtime::block_on(create_vault(app.state::<AppState>(), name, location))
         {
-            Ok(_) => SetupVaultResponse {
-                success: true,
+            Ok(vault_id) => SetupVaultResponse {
+                vault_id: Some(vault_id),
                 error: None,
             },
             Err(e) => SetupVaultResponse {
-                success: false,
+                vault_id: None,
                 error: Some(e),
             },
         },
@@ -51,11 +49,8 @@ async fn create_vault(
     state: tauri::State<'_, AppState>,
     name: String,
     location: String,
-) -> Result<i32, ApplicationError> {
+) -> Result<i32, RepositoryError> {
     let conn = state.conn.lock().await.clone();
-    conn.ping()
-        .await
-        .map_err(|e| ApplicationError::DatabaseError(e.to_string()))?;
 
     let new_vault = vault::ActiveModel {
         path: Set(location),
@@ -66,15 +61,7 @@ async fn create_vault(
     let res = vault::Entity::insert(new_vault)
         .exec(&conn)
         .await
-        .map_err(|e| ApplicationError::DatabaseError(e.to_string()))?;
+        .map_err(|e| RepositoryError::DatabaseError(e.to_string()))?;
 
     Ok(res.last_insert_id)
-}
-
-#[tauri::command]
-#[specta::specta]
-#[instrument(ret)]
-pub fn find_existing_vault() {
-    // NOTE: macos specific
-    Command::new("open").arg("-R");
 }

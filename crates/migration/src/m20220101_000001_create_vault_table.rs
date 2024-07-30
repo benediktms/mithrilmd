@@ -18,8 +18,8 @@ impl MigrationTrait for Migration {
                             .auto_increment()
                             .primary_key(),
                     )
-                    .col(ColumnDef::new(Vault::Path).string().not_null())
-                    .col(ColumnDef::new(Vault::Name).string().not_null())
+                    .col(ColumnDef::new(Vault::Path).string().not_null().unique_key())
+                    .col(ColumnDef::new(Vault::Name).string().not_null().unique_key())
                     .col(
                         ColumnDef::new(Vault::CreatedAt)
                             .timestamp_with_time_zone()

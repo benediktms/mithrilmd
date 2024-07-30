@@ -8,11 +8,6 @@ use app::{
 };
 use tauri::{LogicalSize, Manager, Size, WindowEvent};
 
-#[tauri::command]
-fn greet(name: &str) -> String {
-    format!("Hello, {}!", name)
-}
-
 fn main() {
     dotenvy::dotenv().ok();
 
@@ -44,7 +39,11 @@ fn main() {
                 api.prevent_close();
             }
         })
-        .invoke_handler(tauri::generate_handler![greet, setup_new_vault])
+        .invoke_handler(tauri::generate_handler![
+            setup_new_vault,
+            get_all_vaults,
+            find_vault
+        ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
@@ -57,6 +56,10 @@ mod tests {
 
     #[test]
     fn export_bindings() {
-        ts::export(collect_types![setup_new_vault], "../src/types/bindings.ts").unwrap();
+        ts::export(
+            collect_types![setup_new_vault, get_all_vaults, find_vault],
+            "../src/types/bindings.ts",
+        )
+        .unwrap();
     }
 }

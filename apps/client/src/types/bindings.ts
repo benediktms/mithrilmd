@@ -14,6 +14,17 @@ export function setupNewVault(input: SetupVaultInput) {
     return invoke()<SetupVaultResponse>("setup_new_vault", { input })
 }
 
-export type ApplicationError = { DatabaseError: string }
+export function getAllVaults() {
+    return invoke()<GetAllVaultsResponse>("get_all_vaults")
+}
+
+export function findVault(id: number) {
+    return invoke()<FindVaultResponse>("find_vault", { id })
+}
+
+export type Vault = { id: number; name: string; path: string }
+export type RepositoryError = { DatabaseError: string } | { NotFoundByPrimaryKey: [string, number] }
+export type FindVaultResponse = { vault: Vault | null; error: RepositoryError | null }
+export type SetupVaultResponse = { vault_id: number | null; error: RepositoryError | null }
+export type GetAllVaultsResponse = { error: RepositoryError | null; vaults: Vault[] }
 export type SetupVaultInput = { name: string; location: string }
-export type SetupVaultResponse = { success: boolean; error: ApplicationError | null }

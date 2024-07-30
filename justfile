@@ -11,4 +11,4 @@ migrate-down n:
   sea-orm-cli migrate down -n {{n}} -d crates/migration
 
 generate-entity:
-  sea-orm-cli generate entity -d crates/entity/src/entities
+  sea-orm-cli generate entity -o crates/entity/src/entities
