@@ -32,7 +32,7 @@
 
     if (res.vault_id) {
       localStorage.setItem('active-vault', res.vault_id.toString());
-      goto(`/vaults/${res.vault_id}/board`);
+      goto(`/vault`);
     } else if (res.error) {
       throw res.error;
     }
@@ -72,7 +72,7 @@
 
   function loadVault(id: number) {
     localStorage.setItem('active-vault', id.toString());
-    goto(`/vaults/${id}/board`);
+    goto(`/vault`);
   }
 
   onMount(async () => {
@@ -80,7 +80,7 @@
     let activeVaultId = localStorage.getItem('active-vault');
 
     if (activeVaultId) {
-      goto(`/vaults/${activeVaultId}/board`);
+      goto(`/vault`);
     }
 
     const vaultsRes = await getAllVaults();
