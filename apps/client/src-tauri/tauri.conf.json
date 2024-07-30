@@ -92,17 +92,6 @@
     },
     "updater": {
       "active": false
-    },
-    "windows": [
-      {
-        "fullscreen": false,
-        "height": 600,
-        "resizable": true,
-        "title": "MithrilMD",
-        "width": 800,
-        "titleBarStyle": "Overlay",
-        "hiddenTitle": true
-      }
-    ]
+    }
   }
 }
